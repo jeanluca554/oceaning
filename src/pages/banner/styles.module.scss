@@ -1,0 +1,72 @@
+.containerBanner {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .yellowText {
+        position: relative;
+        width: 510px;
+        height: 57px;
+        top: 258px;
+    
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 38px;
+        line-height: 57px;
+        /* identical to box height */
+    
+        text-align: center;
+    
+        background: linear-gradient(to right, #FFDA15, #FFA115);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .whiteText {
+        position: absolute;
+        width: 1006px;
+        height: 78px;
+        margin-right: auto;
+        top: 321px;
+    
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 60px;
+        line-height: 66px;
+        /* or 110% */
+    
+        text-align: center;
+    
+        color: #FFFFFF;
+    }
+
+    .grayText {
+        position: absolute;
+        width: 690px;
+        height: 68px;
+        top: 416px;
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 34px;
+        /* or 170% */
+
+        text-align: center;
+
+        color: #78748C;
+    }
+
+    .greenButton {
+        position: absolute;
+        // width: 371px;
+        // height: 70px;
+        // left: 534px;
+        top: 614px;
+    }
+}
+
+

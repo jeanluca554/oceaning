@@ -1,0 +1,137 @@
+.containerRegister {
+    margin-left: 4.313rem;
+
+    .yellowText {
+        position: absolute;
+        height: 49px;
+        top: 322px;
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 34px;
+        line-height: 29px;
+
+        background: linear-gradient(to right, #FFDA15, #FFA115);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .whiteText {
+        position: absolute;
+        width: 795px;
+        height: 81px;
+        top: 367px;
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 54px;
+        line-height: 81px;
+        /* identical to box height */
+        
+        color: var(--white);
+    }
+
+    .grayText {
+        position: absolute;
+        width: 657px;
+        height: 68px;
+        top: 463px;
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 34px;
+        /* or 155% */
+
+        color: var(--greyText);
+    }
+
+    form {
+        // background: rgba(255, 255, 255, 0.03);
+
+        width: 100%;
+        // height: 180px;
+        max-width: 683px;
+
+        margin:698px auto 0 0;
+        
+        display: flex;
+        flex-direction: column;
+
+        .inputName{
+            width: 100%;
+            margin-bottom: 21px;
+    
+            background-color: transparent;
+    
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 40px;
+            line-height: 60px;
+            caret-color: var(--blueInput);
+            /* identical to box height */
+    
+            border: none;
+            border-bottom: solid var(--greyInputBorder);
+            color: var(--greyInputText);
+    
+            
+        }
+
+        .inputEmail{
+            width: 683px;
+
+            background-color: transparent;
+    
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 40px;
+            line-height: 60px;
+            caret-color: var(--blueInput);
+            /* identical to box height */
+    
+            border-top: 0 none;
+            border-left: 0 none;
+            border-right: 0 none;
+            border-bottom: solid var(--greyInputBorder);
+            color: var(--greyInputText);
+        }
+
+        span {
+          
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 27px;
+            /* identical to box height */
+
+            color: var(--red);
+        }
+
+    }
+
+    .inputName:focus {
+        color: var(--blueInput);
+        border-bottom: solid var(--blueInput);
+        pointer-events: none;
+        outline: none !important;
+    }
+
+    
+
+    .greenButton {
+        position: absolute;
+        width: 298px;
+        height: 66px;
+        // margin-right: 81px;
+        right: 151px;
+        top: 707px;
+    }    
+}
+

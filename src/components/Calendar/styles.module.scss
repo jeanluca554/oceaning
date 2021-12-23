@@ -1,0 +1,65 @@
+.calendarDay {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    border-right: 1px solid #FFFFFF;
+
+    &:first-child{
+        
+        position: relative;
+        width: 110px;
+        height: 60px;
+        left: 4.313rem;
+        padding-right: 36px;
+        top: 649px;
+        margin-right: 41px;
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 60px;
+        line-height: 66px;
+
+        color: #FFFFFF;
+    }
+    &:not(:first-child){
+        
+        position: relative;
+        width: 73px;
+        height: 60px;        
+        top: 649px;
+        margin-left: 20px;
+        padding-right: 36px;
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 60px;
+        line-height: 66px;
+        /* or 110% */
+
+        color: #FFFFFF;
+    }
+}
+
+.calendarMonth {
+    position: relative;
+    width: 110px;
+    height: 60px;
+    left: 4.313rem;
+    top: 640px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 33px;
+    line-height: 66px;
+    /* or 200% */
+
+    color: #B5B2C7;
+
+    border-right: 1px solid #FFFFFF;
+    // border-left: 1px solid #FFFFFF;
+}
+

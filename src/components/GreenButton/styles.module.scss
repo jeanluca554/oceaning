@@ -1,0 +1,20 @@
+.greenButton {
+    button {
+        width: 359px;
+        height: 84px;
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 27px;
+        line-height: 30px;
+        border-radius: 50px;
+
+        border: none;
+
+        background: linear-gradient(90deg, #15FFAB 0%, #15F1FF 100%);
+
+        cursor: pointer;
+    }
+    
+}

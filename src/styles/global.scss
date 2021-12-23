@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+:root {
+    --white: #FFFFFF;
+    --greyText: #78748C;
+    --greyInputText: #6A6879;
+    --greyInputBorder: #363443;
+    --black: #201F26;
+    --red: #FF2358;
+    --blueInput: #15F7D9
+
+}
+
+@media (max-width: 1080px)
+{
+    html {
+        font-size: 93.75%;
+    }
+}
+
+@media (max-width: 720px)
+{
+    html {
+        font-size: 87.5%;
+    }
+}
+
+body {
+    background: url("../../public/background-oceaning00.png");
+    //position: static;
+    // background-attachment: fixed;
+    background-size: cover;
+    
+        
+}

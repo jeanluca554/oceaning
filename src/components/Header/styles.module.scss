@@ -1,0 +1,109 @@
+.headerContainer {
+    display: flex;
+    align-items: center;
+
+    .logo {
+        // position: absolute;
+        // width: 313px;
+        // height: 35px;
+        // left: 111px;
+        // top: 86px;
+        position: absolute;
+        width: 17.939rem;
+        height: 2rem;
+        left: 4.313rem;
+        top: 4.563rem;
+    
+    }
+    
+    .itemsRight {
+        color: #FFFFFF;
+
+        .compartilhe {
+            position: absolute;
+            right: 139px;
+            // left: 1128;
+            top: 66px;
+
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 21px;
+            /* identical to box height */
+
+            text-align: right;
+
+            color: #FFFFFF;
+
+            opacity: 0.7;
+
+        }
+
+        .theOceaning {
+            position: absolute;
+            right: 138px;
+            top: 84px;
+
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        .logoInstagram {
+            position: absolute;
+            right: 81px;
+            top: 60px;
+            width: 40px;
+            height: 40px;
+            font-size: 46px;
+        }
+
+        
+
+        // .itemsText {
+        //     margin-left: 2px;
+        // }
+
+        
+    }
+}
+
+
+
+
+
+// .compartilhe{
+//     position: absolute;
+//     width: 143px;
+//     height: 15px;
+//     left: 1128px;
+//     top: 84px;
+
+//     color: #FFFFFF;
+//     opacity: 0.7;
+// }
+
+// .theOceaning {
+//     position: absolute;
+//     width: 219px;
+//     height: 31px;
+//     left: 1053px;
+//     top: 113px;
+
+    
+
+//     color: #FFFFFF;
+// }
+
+// .logoInstagram {
+//     position: absolute;
+//     left: 90.49%;
+//     right: 5.56%;
+//     top: 9.56%;
+//     bottom: 84%;
+
+//     color: #FFFFFF;
+// }
