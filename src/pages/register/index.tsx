@@ -1,9 +1,17 @@
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { setCookie } from 'nookies';
+import { useEffect, useState } from 'react';
 import { GreenButton } from '../../components/GreenButton';
 import styles from './styles.module.scss';
 
 export default function Register() {
+
+    const [dev, setDev] = useState('');
+
+    const onChange = event => {
+        setDev(event.target.value)
+        // console.log(event.target.value);
+    }
 
     useEffect(() => {
         const fields = document.querySelectorAll("[required]");
@@ -35,7 +43,7 @@ export default function Register() {
             const field = event.target;
 
             const error = ValidateField(field);
-            console.log("Error Existis: ", error);
+            // console.log("Error Existis: ", error);
 
             const spanErrorName = field.parentNode.querySelector("span");
 
@@ -61,12 +69,22 @@ export default function Register() {
 
         document.querySelector("form")
             .addEventListener("submit", event => {
-                console.log("Enviar o formulário");
+                // const inputName = (document.querySelector("#devName"));
+                // const devName = inputName.value;
+                console.log(dev);
+
+                setCookie(null, 'DEV_NAME', dev, {
+                    maxAge: 86400 * 1,
+                    path: '/',
+                })
 
                 //não enviar formulário para testes
                 // event.preventDefault();
             });
     })
+
+
+
 
     return (
         <>
@@ -87,9 +105,12 @@ export default function Register() {
                 <form action="/skills">
                     <div className={styles.input}>
                         <input
+                            id='devName'
                             type="text"
                             className={styles.inputName}
                             placeholder='Digite seu nome'
+                            onBlur={onChange}
+                            // value={dev}
                             required
                         />
                         <span className={styles.error} id={"erronome"}></span>
