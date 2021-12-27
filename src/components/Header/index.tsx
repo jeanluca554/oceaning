@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './styles.module.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -7,13 +8,15 @@ export function Header() {
 
     return (
         <header className={styles.headerContainer}>
-            <a href="/">
-                <img
-                    src="/logo-oceaning.png"
-                    alt="Logo Oceaning"
-                    className={styles.logo}
-                />
-            </a>
+            <Link href="/">
+                <a>
+                    <img
+                        src="/logo-oceaning.png"
+                        alt="Logo Oceaning"
+                        className={styles.logo}
+                    />
+                </a>
+            </Link>
 
 
             <div className={styles.itemsRight}>
