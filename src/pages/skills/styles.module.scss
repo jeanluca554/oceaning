@@ -96,4 +96,46 @@
         display: flex;
     }  
       
+    .selectedSkills {
+        display: flex;
+        color: var(--white);
+        background: linear-gradient(to right, #FFDA15, #FFA115);
+        
+        width: 863px;
+        height: 600px;
+        border-radius: 20px;
+    
+        justify-content: space-between;
+
+        padding: 23px 42px;
+
+        margin-bottom: -200px;
+
+
+        .mainHeader {
+            display: flex;
+            width: 763px;
+            justify-content: space-between !important;
+        
+            color: #131218;
+
+
+            #textHeaderSkillsLeft{
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 29px;
+            }
+
+            #textHeaderSkillsRight {
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 29px;
+            }
+            
+        }
+    }
 }

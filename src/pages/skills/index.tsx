@@ -7,6 +7,8 @@ import { parseCookies } from 'nookies';
 import { GetStaticProps } from 'next';
 import { SkillButton } from '../../components/SkillButton';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons'
 // type Skill = {
 //     id: string;
 //     name: string;
@@ -103,9 +105,17 @@ export default function Skills() {
                     </div>
                 </div>
 
+                <div className={styles.selectedSkills}>
+                    <main className={styles.mainHeader}>
+                        <span id={styles.textHeaderSkillsLeft}>5 Habilidades adicionadas</span>
+                        <span id={styles.textHeaderSkillsRight}>VER HABILIDADES &nbsp;&nbsp;<FontAwesomeIcon icon={faAngleDoubleUp} /></span>
+                    </main>
+
+                </div>
+
                 {/* <Link href={"/"}> */}
                 <a className={styles.greenButton} type='submit'>
-                    <GreenButton text={'CONTINUAR'} />
+                    <GreenButton text={'FINALIZAR'} />
                 </a>
                 {/* </Link> */}
                 {/* </form> */}
@@ -113,34 +123,4 @@ export default function Skills() {
 
         </>
     );
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-
-    const devSkills = {
-        "skills": [
-            {
-                "id": "react",
-                "name": "React"
-            },
-            {
-                "id": "react-native",
-                "name": "React Native"
-            },
-        ]
-    };
-
-    const skills = devSkills.skills.map(skill => {
-        return {
-            id: skill.id,
-            name: skill.name
-        };
-    })
-
-    return {
-        props: {
-            skills
-        },
-        revalidate: 60 * 60 * 8,
-    }
 }
