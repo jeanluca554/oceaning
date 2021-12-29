@@ -92,32 +92,60 @@
         margin-right: 14px;
     }
 
+    .skillButton {
+        // button {
+            padding: 13px 35px;
+    
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 26px;
+            line-height: 39px;
+    
+            border: 1px solid #9FAAB9;
+            box-sizing: border-box;
+            border-radius: 50px;
+    
+            background: transparent;
+            color: #FFFFFF;
+    
+            margin-bottom: 134px;
+    
+            cursor: pointer;
+        // }
+        
+    }
+
     .btnSkill {
         display: flex;
     }  
       
-    .selectedSkills {
+    .selectedSkillsHeader{
         display: flex;
-        color: var(--white);
+        // color: var(--white);
         background: linear-gradient(to right, #FFDA15, #FFA115);
+
+        // margin-bottom: -120px;
         
         width: 863px;
-        height: 600px;
-        border-radius: 20px;
+        height: 104px;
+        border-radius: 20px 20px 0 0;
     
         justify-content: space-between;
 
         padding: 23px 42px;
+        // overflow: hidden;
+        overflow: hidden;
 
-        margin-bottom: -200px;
+        // margin-bottom: -200px;
 
 
         .mainHeader {
             display: flex;
             width: 763px;
-            justify-content: space-between !important;
+            justify-content: space-between;
         
-            color: #131218;
+            color: var(--blackHeader);
 
 
             #textHeaderSkillsLeft{
@@ -136,6 +164,70 @@
                 line-height: 29px;
             }
             
+        }
+    }
+
+    .selectedSkillsBody{
+        display: flex;
+        
+        background: var(--white);
+
+        margin-top: -30px;
+        
+        width: 863px;
+        // height: 104px;
+        border-radius: 20px 20px 0 0;
+    
+        justify-content: space-between;
+
+        padding: 23px 42px;
+        overflow: hidden;
+        // margin-bottom: -200px;
+
+
+        .mainBody {
+            position: relative;
+            width: 100%;
+            // background-color: #15F7D9;
+        
+            color: var(--blackHeader);
+            margin-bottom: 5px;
+
+            table {
+                width: 100%;
+            };
+
+            
+
+            td:first-child {
+
+                // padding: 0;
+
+            }
+
+            .tdSkill {
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 30px;
+                line-height: 29px;
+
+                padding-bottom: 33px;
+
+            }
+
+            .tdBtnRemove {
+                
+                text-align: right;
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 29px;
+
+                color: var(--red);
+                padding-bottom: 33px;
+            }
         }
     }
 }
