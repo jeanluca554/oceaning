@@ -227,6 +227,10 @@
 
                 color: var(--red);
                 padding-bottom: 33px;
+
+                a {
+                    cursor: pointer;
+                }
             }
         }
     }

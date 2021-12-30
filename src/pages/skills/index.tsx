@@ -39,51 +39,58 @@ export default function Skills() {
     const dev = devName.DEV_NAME;
     const [developerName, setDeveloperName] = useState("");
 
-    const skillsSelected = [];
-
-    useEffect(() => {
-        setDeveloperName(dev);
-    }, []);
+    const [skillsSelected, setSkillsSelected] = useState([]);
+    const [lenthSkillsSelected, setLenthSkillsSelected] = useState(0);
 
     //Add row in the table on click the skill button
     const [skillRow, setSkillRow] = useState([]);
+
+    useEffect(() => {
+        setDeveloperName(dev);
+
+    }, []);
+
+
+    useEffect(() => {
+        setLenthSkillsSelected(skillsSelected.length);
+
+    }, [skillsSelected.length]);
+
 
     function filterItems(query) {
         return habilidades.filter(el => el.toLowerCase().indexOf(query.toLowerCase()) > -1);
     }
 
     function addSkill(nome: any) {
-        console.log(skillsSelected.some(e => e === nome.item));
+        // Show true or false if already exists
+        // console.log(skillsSelected.some(e => e === nome.item));
 
         if (skillsSelected.some(e => e === nome.item)) return;
 
-        console.log(nome.item)
+        //console.log(nome.item)
 
         skillsSelected.push(nome.item);
 
-        const tdRemover = <td className={styles.tdBtnRemove}>REMOVER</td>
         let tdSkill = [];
-
         const createTdSkill = (skillSelected, index, array) => {
 
             tdSkill.push(
                 <tr key={habilidades.indexOf(skillSelected)}>
                     <td key={habilidades.indexOf(skillSelected)} className={styles.tdSkill}>{skillSelected}</td>
-                    <td key={habilidades.indexOf(skillSelected) * 2} className={styles.tdBtnRemove}>REMOVER</td>
-                    {/* {tdRemover} */}
+                    <td
+                        key={habilidades.indexOf(skillSelected) * 2}
+                        className={styles.tdBtnRemove}
+                    >
+                        <a onClick={removeSkillRow}>
+                            REMOVER
+                        </a>
+                    </td>
                 </tr>
-
-
             );
         }
 
         skillsSelected.forEach(createTdSkill);
-
-        let skills = []
-        skills.push(skillRow);
-        skills.push(tdSkill);
-
-        setSkillRow(skills)
+        setSkillRow(tdSkill);
     }
 
     //Function to search typed skills
@@ -98,7 +105,7 @@ export default function Skills() {
             const elements = [];
 
             foundSkills.map(function (item, index, array) {
-                console.log(habilidades.indexOf(item) * 3)
+                // console.log(habilidades.indexOf(item) * 3)
                 elements.push(
                     <button
                         key={habilidades.indexOf(item)}
@@ -119,8 +126,36 @@ export default function Skills() {
             elements.push(<></>);
             ReactDOM.render(elements, document.getElementById('skillButton'));
         }
-
     }
+
+    function findSelectedSkillToRemoveIt(skill: string) {
+
+        var name = skill;
+        var index = skillsSelected.indexOf(name);
+        while (index >= 0) {
+            skillsSelected.splice(index, 1);
+            index = skillsSelected.indexOf(name);
+        }
+        console.log(skillsSelected);
+        setSkillsSelected(skillsSelected);
+    }
+
+    const removeSkillRow = event => {
+        const textContent = event.target.parentNode.parentNode.firstChild.textContent;
+        console.log(skillsSelected)
+        findSelectedSkillToRemoveIt(textContent);
+
+        const parent = event.target.parentNode.parentNode;
+
+        while (parent.firstChild) {
+            parent.removeChild(parent.lastChild);
+        }
+
+        setLenthSkillsSelected(skillsSelected.length);
+
+        console.log(skillsSelected)
+    };
+
 
     return (
         <>
@@ -159,7 +194,7 @@ export default function Skills() {
 
                 <div className={styles.selectedSkillsHeader}>
                     <main className={styles.mainHeader}>
-                        <span id={styles.textHeaderSkillsLeft}>5 Habilidades adicionadas</span>
+                        <span id={styles.textHeaderSkillsLeft}>{lenthSkillsSelected} Habilidades adicionadas</span>
                         <span id={styles.textHeaderSkillsRight}>VER HABILIDADES &nbsp;&nbsp;<FontAwesomeIcon icon={faAngleDoubleUp} /></span>
                     </main>
 
