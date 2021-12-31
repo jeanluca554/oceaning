@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './styles.module.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,9 +11,11 @@ export function Header() {
         <header className={styles.headerContainer}>
             <Link href="/">
                 <a>
-                    <img
+                    <Image
                         src="/logo-oceaning.png"
                         alt="Logo Oceaning"
+                        width={287.03}
+                        height={32}
                         className={styles.logo}
                     />
                 </a>

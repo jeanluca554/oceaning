@@ -4,21 +4,11 @@ import Link from 'next/link';
 import { GreenButton } from '../../components/GreenButton';
 import styles from './styles.module.scss';
 import { parseCookies } from 'nookies';
-import { GetStaticProps } from 'next';
-import { SkillButton } from '../../components/SkillButton';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDoubleUp, faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons'
 
-// type addSkillProps = {
-//     name: string;
-// }
-
-// type SkillProps = {
-//     skills: Skill[]
-// }
-
-const habilidades = [
+const skills = [
     "",
     "React",
     "React Native",
@@ -41,6 +31,7 @@ export default function Skills() {
 
     const [skillsSelected, setSkillsSelected] = useState([]);
     const [lenthSkillsSelected, setLenthSkillsSelected] = useState(0);
+    const [activeTable, setActiveTable] = useState(false);
 
     //Add row in the table on click the skill button
     const [skillRow, setSkillRow] = useState([]);
@@ -48,7 +39,7 @@ export default function Skills() {
     useEffect(() => {
         setDeveloperName(dev);
 
-    }, []);
+    }, [dev]);
 
 
     useEffect(() => {
@@ -58,7 +49,7 @@ export default function Skills() {
 
 
     function filterItems(query) {
-        return habilidades.filter(el => el.toLowerCase().indexOf(query.toLowerCase()) > -1);
+        return skills.filter(el => el.toLowerCase().indexOf(query.toLowerCase()) > -1);
     }
 
     function addSkill(nome: any) {
@@ -75,10 +66,10 @@ export default function Skills() {
         const createTdSkill = (skillSelected, index, array) => {
 
             tdSkill.push(
-                <tr key={habilidades.indexOf(skillSelected)}>
-                    <td key={habilidades.indexOf(skillSelected)} className={styles.tdSkill}>{skillSelected}</td>
+                <tr key={skills.indexOf(skillSelected)}>
+                    <td key={skills.indexOf(skillSelected)} className={styles.tdSkill}>{skillSelected}</td>
                     <td
-                        key={habilidades.indexOf(skillSelected) * 2}
+                        key={skills.indexOf(skillSelected) * 2}
                         className={styles.tdBtnRemove}
                     >
                         <a onClick={removeSkillRow}>
@@ -105,10 +96,10 @@ export default function Skills() {
             const elements = [];
 
             foundSkills.map(function (item, index, array) {
-                // console.log(habilidades.indexOf(item) * 3)
+                // console.log(skills.indexOf(item) * 3)
                 elements.push(
                     <button
-                        key={habilidades.indexOf(item)}
+                        key={skills.indexOf(item)}
                         onClick={() => addSkill({ item })}
                         className={styles.skillButton}
                     >
@@ -156,6 +147,15 @@ export default function Skills() {
         console.log(skillsSelected)
     };
 
+    function showSkills() {
+        console.log(activeTable);
+        setActiveTable(true);
+        console.log(activeTable);
+    }
+    function hideSkills() {
+        setActiveTable(false);
+    }
+
 
     return (
         <>
@@ -192,36 +192,92 @@ export default function Skills() {
                     </div>
                 </div>
 
-                <div className={styles.selectedSkillsHeader}>
-                    <main className={styles.mainHeader}>
-                        <span id={styles.textHeaderSkillsLeft}>{lenthSkillsSelected} Habilidades adicionadas</span>
-                        <span id={styles.textHeaderSkillsRight}>VER HABILIDADES &nbsp;&nbsp;<FontAwesomeIcon icon={faAngleDoubleUp} /></span>
-                    </main>
+                {lenthSkillsSelected < 1 ?
+                    <div className={styles.SkillsHeader}>
+                        <main className={styles.mainHeaderWithoutSkills}>
+                            <span>Nenhuma habilidade selecionada</span>
+                        </main>
+                    </div>
+                    :
+                    <>
+                        <div className={styles.selectedSkillsHeader}>
+                            <main className={styles.mainHeader}>
+                                {lenthSkillsSelected == 1 ?
+                                    <>
+                                        <span id={styles.textHeaderSkillsLeft}>
+                                            {lenthSkillsSelected} Habilidade adicionada
+                                        </span>
+                                        {activeTable ?
 
+                                            <span
+                                                id={styles.textHeaderSkillsRight}
+                                                onClick={hideSkills}
+                                            >
 
-                </div>
+                                                FECHAR HABILIDADES &nbsp;&nbsp;<FontAwesomeIcon icon={faAngleDoubleDown} />
+                                            </span>
+                                            :
+                                            <span
+                                                id={styles.textHeaderSkillsRight}
+                                                onClick={showSkills}
+                                            >
 
-                <div className={styles.selectedSkillsBody}>
-                    <main className={styles.mainBody}>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <td className={styles.tdSkill}></td>
-                                    <td className={styles.tdSkill}></td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {skillRow}
+                                                VER HABILIDADES &nbsp;&nbsp;<FontAwesomeIcon icon={faAngleDoubleUp} />
+                                            </span>
+                                        }
 
-                            </tbody>
+                                    </>
+                                    :
+                                    <>
+                                        <span id={styles.textHeaderSkillsLeft}>
+                                            {lenthSkillsSelected} Habilidades adicionadas
+                                        </span>
+                                        {activeTable ?
 
+                                            <span
+                                                id={styles.textHeaderSkillsRight}
+                                                onClick={hideSkills}
+                                            >
 
-                        </table>
+                                                FECHAR HABILIDADES &nbsp;&nbsp;<FontAwesomeIcon icon={faAngleDoubleDown} />
+                                            </span>
+                                            :
+                                            <span
+                                                id={styles.textHeaderSkillsRight}
+                                                onClick={showSkills}
+                                            >
 
+                                                VER HABILIDADES &nbsp;&nbsp;<FontAwesomeIcon icon={faAngleDoubleUp} />
+                                            </span>
+                                        }
+                                    </>
+                                }
+                            </main>
 
-                    </main>
+                        </div>
 
-                </div>
+                        {activeTable ?
+                            <div className={styles.selectedSkillsBody}>
+                                <main className={styles.mainBody}>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <td className={styles.tdSkill}></td>
+                                                <td className={styles.tdSkill}></td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {skillRow}
+                                        </tbody>
+                                    </table>
+                                </main>
+                            </div>
+                            :
+                            <></>
+                        }
+
+                    </>
+                }
 
                 {/* <Link href={"/"}> */}
                 <a className={styles.greenButton} type='submit'>

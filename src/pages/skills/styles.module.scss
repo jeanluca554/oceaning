@@ -162,8 +162,40 @@
                 font-weight: bold;
                 font-size: 20px;
                 line-height: 29px;
+
+                cursor: pointer;
             }
             
+        }
+    }
+    
+    .SkillsHeader{
+        display: flex;
+        
+        width: 863px;
+        height: 104px;
+        border-radius: 20px 20px 0 0;
+        background: #201F26;
+        
+    
+        justify-content: center;
+        align-items: center;
+        // overflow: hidden;
+        overflow: hidden;
+
+        // margin-bottom: -200px;
+
+
+        .mainHeaderWithoutSkills {
+            display: flex;
+        
+            color: var(--greyHeader);
+
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 22px;
+            line-height: 29px;
         }
     }
 
@@ -196,14 +228,6 @@
             table {
                 width: 100%;
             };
-
-            
-
-            td:first-child {
-
-                // padding: 0;
-
-            }
 
             .tdSkill {
                 font-family: Poppins;

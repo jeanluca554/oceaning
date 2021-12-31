@@ -69,9 +69,8 @@ export default function Register() {
 
         document.querySelector("form")
             .addEventListener("submit", event => {
-                // const inputName = (document.querySelector("#devName"));
-                // const devName = inputName.value;
-                console.log(dev);
+
+                //console.log(dev);
 
                 setCookie(null, 'DEV_NAME', dev, {
                     maxAge: 86400 * 1,
@@ -115,13 +114,6 @@ export default function Register() {
                         />
                         <span className={styles.error} id={"erronome"}></span>
 
-                        {/* <input
-                            type="email"
-                            className={styles.inputEmail}
-                            placeholder='Informe o email'
-                            required
-                        />
-                        <span className={styles.error} id={"erronome2"}></span> */}
                     </div>
 
                     <a className={styles.greenButton} type='submit'>
