@@ -1,0 +1,94 @@
+.containerRegisterSuccess {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 258px;
+
+
+    .yellowText {
+        position: relative;
+        width: 315px;
+        height: 87px;
+    
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 58px;
+        line-height: 87px;
+        /* identical to box height */
+    
+        text-align: center;
+    
+        background: linear-gradient(to right, #FFDA15, #FFA115);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .whiteText {
+        position: relative;
+        width: 1162px;
+        height: 78px;
+        margin-top: 10px;
+        //top: 321px;
+    
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 60px;
+        line-height: 66px;
+        /* or 110% */
+    
+        text-align: center;
+    
+        color: var(--white);
+    }
+
+    .grayText {
+        position: relative;
+        width: 690px;
+        height: 68px;
+        margin-top: 23px;
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 34px;
+        /* or 170% */
+
+        text-align: center;
+
+        color: var(--greyText);
+    }
+
+    .greenButton {
+        position: absolute;
+        // width: 371px;
+        // height: 70px;
+        // left: 534px;
+        top: 614px;
+    }
+
+    button {
+        width: 291px;
+        height: 70px;
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 36px;
+        border-radius: 50px;
+        text-transform: uppercase;
+
+        border: none;
+        
+        background-color: var(--black);
+        color: var(--white);
+
+        cursor: pointer;
+        
+    }
+}
+
+

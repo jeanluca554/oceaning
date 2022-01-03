@@ -16,7 +16,6 @@ export function Header() {
                         alt="Logo Oceaning"
                         width={287.03}
                         height={32}
-                        className={styles.logo}
                     />
                 </a>
             </Link>
